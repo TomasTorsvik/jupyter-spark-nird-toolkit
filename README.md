@@ -1,2 +1,2 @@
 # jupyter-spark-nird-toolkit
-A jupyter-sprk application for NIRD Tollkit that includes ESMValTool
+A jupyter-spark application for NIRD Toolkit that includes ESMValTool
