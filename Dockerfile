@@ -42,7 +42,7 @@ RUN conda env update -n base --file environment.yml
 ENV PATH="~/.local/bin:${PATH}"
 
 LABEL maintainer="Tomas Torsvik <tomas.torsvik@uib.no>"     \
-      version="1.0.4"
+      version="1.0.5"
 
 ## # check installation
 ## RUN esmvaltool --help
