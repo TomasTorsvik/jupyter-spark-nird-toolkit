@@ -27,18 +27,23 @@ COPY . /app
 #  https://github.com/ESMValGroup/ESMValTool/blob/version2_development/docker/Dockerfile 
 #=================================================================================
 
-# update the conda packages
-USER notebook
+# update the root environment and conda packages
+USER root
+RUN apt-get update && apt-get install -y vim
 RUN conda update -y conda pip
 
+# create "esmvaltool" environment
+RUN conda env create -f environment.yml
+
 # install environment packages
-RUN conda env update -n base --file environment.yml
+#RUN conda env update -n base --file environment.yml
 
 # Install esmvaltool python package
 #RUN cd /app/esmvaltool_v2.0.0b1                             \
 #    && pip install --user .                                 \
 #    && chmod -R 777 /home/notebook/.local
 
+USER notebook
 ENV PATH="~/.local/bin:${PATH}"
 
 LABEL maintainer="Tomas Torsvik <tomas.torsvik@uib.no>"     \
