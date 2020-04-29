@@ -13,7 +13,7 @@
 # to determine the latest base image
 #=================================================================================
 
-FROM quay.io/uninett/jupyter-spark:20191129-11a74c2
+FROM quay.io/uninett/jupyter-spark:20200420-1131dd2
 
 # Set the working directory to /app
 WORKDIR /app
